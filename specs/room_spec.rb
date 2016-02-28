@@ -6,21 +6,21 @@ require_relative("../classes/hotel.rb")
 class RoomTest < MiniTest::Test
 
   def setup
-    @params1 = {
+    params1 = {
       size: :double,
       capacity: 2,
       rate: 100,
       occupancy: 2
     }
-    @params2 = {
+    params2 = {
       size: :double,
       capacity: 2,
       rate: 100,
       occupancy: 0
     }
 
-    @room1 = Room.new(@params1)
-    @room2 = Room.new(@params2)
+    @room1 = Room.new(params1)
+    @room2 = Room.new(params2)
 
   end
 
@@ -29,12 +29,11 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_capacity_matches_size
-    @room2.size == :double ? capacity = 2 : capacity = 1
-    assert_equal(capacity, @room2.capacity)
+    @room2.size == :double ? inferred_capacity = 2 : inferred_capacity = 1
+    assert_equal(inferred_capacity, @room2.capacity)
   end
 
   def test_room_can_fill
-    assert_equal(0, @room2.occupancy)
     @room2.fill
     assert_equal(2, @room2.occupancy)
   end
