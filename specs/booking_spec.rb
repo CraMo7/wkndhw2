@@ -23,9 +23,34 @@ class BookingTest < MiniTest::Test
     @room1 = Room.new(room1_params)
     @room2 = Room.new(room2_params)
 
+    guest1_params = {
+      name: "James Bond",
+      money: 784784,
+      lead_guest: true
+    }
+
+    guest2_params = {
+      name: "Miss Moneypenny",
+      money: 80,
+      lead_guest: false
+    }
+
+    guest3_params = {
+      name: "Q",
+    }
+
+    guest4_params = {
+      name: "Pussy Galore",
+    }
+
+    @guest1 = Guest.new(guest1_params)
+    @guest2 = Guest.new(guest2_params)
+    @guest3 = Guest.new(guest3_params)
+    @guest4 = Guest.new(guest4_params)
+
     booking1_params = {
-      lead_guest: "James Bond",
-      guests: ["Miss Moneypenny", "Q", "Pussy Galore"],
+      lead_guest: @guest1,
+      guests: [@guest2, @guest3, @guest4],
       rooms: [@room1, @room2],
     }
 
@@ -35,6 +60,16 @@ class BookingTest < MiniTest::Test
   def test_booking_has_accurate_cost
     assert_equal(200, @booking1.cost)
 
+  end
+
+  def test_lead_guest_has_enough_money
+    # @booking1.lead_guest
+    assert_equal(true, lead_guest_has_enough_money)
+    
+  end
+
+  def test_switch_lead_guest
+    
   end
 
 end
