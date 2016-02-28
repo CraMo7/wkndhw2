@@ -11,7 +11,6 @@ attr_reader :capacity, :size, :rate, :occupancy
   
   def fill
     @occupancy = @capacity
-    
   end
   
 end

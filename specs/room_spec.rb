@@ -30,9 +30,13 @@ class RoomTest < MiniTest::Test
 
   def test_room_capacity_matches_size
     @room2.size == :double ? capacity = 2 : capacity = 1
-
     assert_equal(capacity, @room2.capacity)
-    
+  end
+
+  def test_room_can_fill
+    assert_equal(0, @room2.occupancy)
+    @room2.fill
+    assert_equal(2, @room2.occupancy)
   end
 
 end
