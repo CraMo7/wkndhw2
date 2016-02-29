@@ -1,5 +1,5 @@
 class RecordEntry
-  def initialize(params)
+  def initialize(params = {})
     @user = params[:agent]
     @action = params[:action]
     @guest = params[:guest]

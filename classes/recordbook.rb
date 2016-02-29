@@ -4,7 +4,7 @@ class RecordBook
 
 attr_reader :entries
 
-  def initialize(params)
+  def initialize(params = {})
     @entries = params[:entries]
     
   end

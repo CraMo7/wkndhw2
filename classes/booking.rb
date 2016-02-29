@@ -4,7 +4,7 @@ class Booking
 
   attr_reader :lead_guest, :guests, :rooms, :cost
 
-  def initialize(params)
+  def initialize(params = {})
     @lead_guest = params[:lead_guest]
     @guests = params[:guests]
     @rooms = params[:rooms]
@@ -13,5 +13,7 @@ class Booking
       @cost += room.rate
     end
   end
+
+
 
 end

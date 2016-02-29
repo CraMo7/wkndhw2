@@ -37,6 +37,12 @@ class GuestTest < MiniTest::Test
     @guest2 = Guest.new(guest2_params)
     @guest3 = Guest.new(guest3_params)
     @guest4 = Guest.new(guest4_params)
+
+    guest5_params = {
+
+    }
+
+    @guest5 = Guest.new
   end
 
   def test_guest_has_name
@@ -50,5 +56,10 @@ class GuestTest < MiniTest::Test
   def test_guests_lead_status_defaults_when_not_passed
     assert_equal(false, @guest4.lead_guest)
   end
+
+  def test_validation_catches_no_params
+    assert_equal("Anonymous Guest", @guest5.name[0,15])
+  end
+
   
 end
