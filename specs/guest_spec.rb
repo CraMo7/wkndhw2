@@ -50,4 +50,5 @@ class GuestTest < MiniTest::Test
   def test_guests_lead_status_defaults_when_not_passed
     assert_equal(false, @guest4.lead_guest)
   end
+  
 end
