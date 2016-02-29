@@ -38,10 +38,6 @@ class GuestTest < MiniTest::Test
     @guest3 = Guest.new(guest3_params)
     @guest4 = Guest.new(guest4_params)
 
-    guest5_params = {
-
-    }
-
     @guest5 = Guest.new
   end
 
