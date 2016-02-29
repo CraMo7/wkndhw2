@@ -1,6 +1,6 @@
 class Guest
 
-  attr_reader :name, :lead_guest
+  attr_reader :name, :lead_guest, :money
 
 
   def initialize(params)

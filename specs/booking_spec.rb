@@ -63,7 +63,7 @@ class BookingTest < MiniTest::Test
   end
 
   def test_lead_guest_has_enough_money
-    # @booking1.lead_guest
+    @booking1.lead_guest.money >= @booking1.cost ? lead_guest_has_enough_money = true : lead_guest_has_enough_money = false
     assert_equal(true, lead_guest_has_enough_money)
     
   end
